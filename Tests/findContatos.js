@@ -12,4 +12,11 @@ describe('find info', ()=>{
     it('Atenção o nome é obrigatório',()=>{
         findInfo.buscarNome().should.be.equal('Nome está vazio')
     })
+    it('Retornar tipo inválido', () =>{
+        findInfo.buscarNome({}).should.be.equal('tipo inválido')
+    })
+    it('Informa o email do usúario retornar email não fornecido',()=>{
+        findInfo.buscarEmail('Adenilson@developer').should.be.equal('Email não encontrado')
+    })
+
 })
